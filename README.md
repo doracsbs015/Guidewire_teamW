@@ -1,8 +1,8 @@
 Guidewire_Team_W
 
-GigPhare — AI-Powered Parametric Income Protection for Gig Workers
+GigPhare - AI-Powered Parametric Income Protection for Gig Workers
 
-Inspired by Guidewire, we wanted a name that conveys care, guidance, and reliability for gig workers. We chose "GigPhare" — from French "phare" meaning lighthouse — symbolizing a guiding light in difficult times, providing quick, fair, and life-saving support for gig workers. Short, memorable, and meaningful.
+Inspired by Guidewire, we wanted a name that conveys care, guidance, and reliability for gig workers. We chose "GigPhare" -from French "phare" meaning lighthouse - symbolizing a guiding light in difficult times, providing quick, fair, and life-saving support for gig workers. Short, memorable, and meaningful.
 
 
 The Problem :
@@ -15,19 +15,19 @@ No minimum wage protection, no sick leave, no short-term income safety net exist
 India's Code on Social Security (2020) recognizes gig workers — but no real-time compensation mechanism exists
 
 
-What GigPhare Does....
+What GigPhare Does?
 GigPhare is a parametric micro-insurance platform that protects gig workers from income loss caused by external disruptions. Instead of manual claims:
 
-Monitors real-world conditions (weather, AQI, curfews, traffic)
-Detects income impact using platform activity signals
-Automatically triggers compensation — no claim filing, no waiting
++ Monitors real-world conditions (weather, AQI, curfews, traffic)
++ Detects income impact using platform activity signals
++ Automatically triggers compensation — no claim filing, no waiting
 
 Persona Scenarios:
-Rajan, 28 — Full-time delivery partner, Chennai
+Rajan, 28 - Full-time delivery partner, Chennai
 Heavy rain (65mm/hr) hits his zone. He earns Rs. 140 against his Rs. 550 baseline. GigPhare's rain trigger fires, income impact scores at 75% drop (High Impact), and Rs. 380 is credited to his UPI within the end of the day. His weekly premium: Rs. 500.
-Meena, 34 — Part-time partner, Bengaluru
+Meena, 34 - Part-time partner, Bengaluru
 AQI crosses 350 + two-wheeler movement restriction issued. Her GPS activity shows zero deliveries in that window. Fraud check passes. Partial compensation of Rs. 120 auto-credited. Her weekly premium: Rs. 250.
-Fraud attempt — Coordinated group claim
+Fraud attempt - Coordinated group claim
 12 workers submit claims simultaneously in a zone with no active trigger. Hard check fails immediately. Synchronized timing (< 4 min window) and GPS–IP mismatch flag the cluster. 9 rejected outright, 3 routed to manual review.
 The gig worker can also pay on daily basis with certain percentage.
 (the amount mentioned here is just for the understanding purpose)
@@ -73,23 +73,24 @@ A trigger opens a compensation evaluation window — payout is not automatic unt
 
 Compensation Logic:
 Impact Score Classification Payout ≥ 75% income dropHigh ImpactUp to 80% of daily baseline gap 40–74% dropMedium Impact Proportional to score < 40% dropLow Impact No payout
-The 80% cap is intentional — it prevents a scenario where workers are better off not working during disruptions.
+The 80% cap is intentional, it prevents a scenario where workers are better off not working during disruptions.
 
 AI/ML Integration:
-Module Model Why Key Inputs Risk ClassificationRandom Forest ClassifierHandles non-linear interactions; robust to missing dataGPS zone, work hours, disruption history, platform typeIncome PredictionRandom Forest RegressorCaptures time-of-day and zone-density interactions wellDay, hour, zone, weather forecast, order densityPremium OptimizationGradient Boosting RegressorIteratively corrects pricing based on regional risk patternsZone risk score, disruption frequency, activity indexFraud DetectionIsolation ForestUnsupervised anomaly detection — no labeled fraud data needed at launchGPS patterns, claim timing, sensor signals, IP data
+Module Model Why Key Inputs Risk ClassificationRandom Forest ClassifierHandles non-linear interactions; robust to missing dataGPS zone, work hours, disruption history, platform typeIncome PredictionRandom Forest RegressorCaptures time-of-day and zone-density interactions wellDay, hour, zone, weather forecast, order densityPremium OptimizationGradient Boosting RegressorIteratively corrects pricing based on regional risk patternsZone risk score, disruption frequency, activity indexFraud DetectionIsolation ForestUnsupervised anomaly detection, no labeled fraud data needed at launchGPS patterns, claim timing, sensor signals, IP data
+
 Fraud validation runs in three layers:
 
-Hard checks — no active trigger in zone, GPS mismatch, claim filed too late → instant rejection
-Behavioral scoring — GPS movement consistency, order activity correlation, sensor continuity
-Anomaly detection — Isolation Forest flags outliers; synchronized claims across users detected at network level
+Hard checks - no active trigger in zone, GPS mismatch, claim filed too late → instant rejection
+Behavioral scoring - GPS movement consistency, order activity correlation, sensor continuity
+Anomaly detection - Isolation Forest flags outliers; synchronized claims across users detected at network level
 
 Trust Score > 80 → instant payout. Score 50–80 → partial + 24hr review. Below 50 → manual review (worker can submit photo proof).
 
-Platform Choice — Mobile First (Flutter)
+Platform Choice - Mobile First (Flutter)
 
 We chose Flutter over a web app for concrete reasons:
 
-Delivery partners operate entirely from smartphones — desktop access is minimal
+Delivery partners operate entirely from smartphones - desktop access is minimal
 GPS, gyroscope, and accelerometer access for fraud detection are native mobile capabilities
 Push notifications for triggers and payouts work naturally on mobile
 Single Flutter codebase covers both Android and iOS
@@ -255,11 +256,11 @@ PhaseTimelineFocusFoundationWeeks 1–3Onboarding, risk profiling, premium model
 
 What Makes GigPhare Different...
 
-No claims process — triggers fire automatically, workers never file anything
-Proportional payouts — 30% income loss gets proportional compensation, not binary all-or-nothing
-Fraud resistance by design — gaming the system requires faking external conditions AND behavior signals simultaneously
-Dynamic pricing — premiums adjust to actual zone risk, not static actuarial tables
-Platform-agnostic — integrates with any gig platform via API
+No claims process - triggers fire automatically, workers never file anything
+Proportional payouts - 30% income loss gets proportional compensation, not binary all-or-nothing
+Fraud resistance by design - gaming the system requires faking external conditions AND behavior signals simultaneously
+Dynamic pricing - premiums adjust to actual zone risk, not static actuarial tables
+Platform-agnostic - integrates with any gig platform via API
 
 
 Next Steps:
